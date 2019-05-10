@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using AddressBook.Models;
 
-namespace AddressBook.Pages.Movies
+namespace AddressBook.Pages.Persons
 {
     public class DetailsModel : PageModel
     {

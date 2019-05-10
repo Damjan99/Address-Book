@@ -9,7 +9,7 @@ using AddressBook.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel.DataAnnotations;
 
-namespace AddressBook.Pages.Movies
+namespace AddressBook.Pages.Persons
 {
     public class IndexModel : PageModel
     {

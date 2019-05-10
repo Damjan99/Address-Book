@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AddressBook.Models;
 
-namespace AddressBook.Pages.Movies
+namespace AddressBook.Pages.Persons
 {
     public class EditModel : PageModel
     {

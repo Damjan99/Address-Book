@@ -9,7 +9,7 @@ using AddressBook.Models;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 
-namespace AddressBook.Pages.Movies
+namespace AddressBook.Pages.Persons
 {
     public class CreateModel : PageModel
     {

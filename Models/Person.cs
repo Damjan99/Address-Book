@@ -24,16 +24,18 @@ namespace AddressBook.Models
         public int ID { get; set; }
 
         [Required(ErrorMessage = "First Name is required.")]
-
         [Display(Name = "First Name")]
         public string First_Name { get; set; }
+
 
         [Required(ErrorMessage = "Last Name is required.")]
         [Display(Name = "Last Name")]
         public string Last_Name { get; set; }
 
+
         [Required(ErrorMessage ="Address is required.")]
         public string Address { get; set; }
+
 
         [Required(ErrorMessage = "Telephone Number is required.")]
         [Display(Name = "Telephone Number")]

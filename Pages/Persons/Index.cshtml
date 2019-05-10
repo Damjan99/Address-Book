@@ -1,5 +1,5 @@
 @page "{searchString?}"
-@model AddressBook.Pages.Movies.IndexModel
+@model AddressBook.Pages.Persons.IndexModel
 
 @{
     ViewData["Title"] = "Address Book";
@@ -19,10 +19,11 @@
             <option value="">All</option>
         </select> <br /> <br />
         Search by First Name: <input type="text" asp-for="SearchFirstName" />
+        <br /> <br />
         <input type="submit" value="Filter" />
     </p>
 </form>
-<br/> <br/> 
+<br/> 
 <table class="table">
     <thead>
         <tr>
