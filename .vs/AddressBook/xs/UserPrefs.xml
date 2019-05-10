@@ -1,0 +1,70 @@
+﻿<Properties StartupConfiguration="{64709497-9D5E-4ACA-811C-E1BB6E82CC32}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Pages/Persons/Edit.cshtml.cs">
+    <Files>
+      <File FileName="Pages/Persons/Index.cshtml" Line="43" Column="13" />
+      <File FileName="Pages/Persons/Create.cshtml.cs" Line="30" Column="1" />
+      <File FileName="Pages/Shared/_Layout.cshtml" Line="29" Column="57" />
+      <File FileName="Startup.cs" Line="36" Column="1" />
+      <File FileName="appsettings.json" Line="1" Column="1" />
+      <File FileName="Models/SeedData.cs" Line="55" Column="1" />
+      <File FileName="Program.cs" Line="24" Column="36" />
+      <File FileName="Models/Person.cs" Line="39" Column="1" />
+      <File FileName="Pages/Persons/Edit.cshtml.cs" Line="57" Column="18" />
+      <File FileName="Pages/Persons/Edit.cshtml" Line="9" Column="1" />
+      <File FileName="Pages/Persons/Details.cshtml.cs" Line="1" Column="1" />
+      <File FileName="Pages/Persons/Details.cshtml" Line="1" Column="18" />
+      <File FileName="Pages/Persons/Delete.cshtml" Line="12" Column="1" />
+      <File FileName="Pages/Index.cshtml.cs" Line="1" Column="1" />
+      <File FileName="Pages/Privacy.cshtml.cs" Line="1" Column="1" />
+      <File FileName="Pages/Privacy.cshtml" Line="1" Column="1" />
+      <File FileName="Pages/Index.cshtml" Line="1" Column="1" />
+      <File FileName="Pages/Error.cshtml" Line="1" Column="1" />
+      <File FileName="Pages/Error.cshtml.cs" Line="1" Column="1" />
+      <File FileName="Pages/Persons/Delete.cshtml.cs" Line="18" Column="12" />
+      <File FileName="Pages/Persons/Index.cshtml.cs" Line="53" Column="1" />
+      <File FileName="../../../../../../../usr/local/share/dotnet/sdk/NuGetFallbackFolder/microsoft.aspnetcore.razor.design/2.2.0/build/netstandard2.0/Microsoft.AspNetCore.Razor.Design.CodeGeneration.targets" Line="135" Column="31" />
+      <File FileName="wwwroot/css/site.css" Line="1" Column="1" />
+      <File FileName="Pages/Persons/Create.cshtml" Line="9" Column="69" />
+      <File FileName="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map" Line="1" Column="362985" />
+      <File FileName="wwwroot/lib/bootstrap/dist/js/bootstrap.js.map" Line="1" Column="211306" />
+      <File FileName="Controllers/ValidationController.cs" Line="10" Column="12" />
+      <File FileName="Migrations/20190508235555_InitialCreate.Designer.cs" Line="1" Column="1" />
+      <File FileName="Models/PersonInfo.cs" Line="1" Column="1" />
+      <File FileName="appsettings.Development.json" Line="10" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="AddressBook" expanded="True">
+            <Node name="AddressBook" expanded="True">
+              <Node name="Migrations" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Pages" expanded="True">
+                <Node name="Persons" expanded="True">
+                  <Node name="Edit.cshtml.cs" selected="True" />
+                </Node>
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True" />
+                <Node name="lib" expanded="True">
+                  <Node name="bootstrap" expanded="True">
+                    <Node name="dist" expanded="True">
+                      <Node name="js" expanded="True" />
+                    </Node>
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.AddressBook PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
