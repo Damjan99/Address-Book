@@ -15,10 +15,13 @@
 <b>Filter: </b>
 <form style=" padding: 10px; width:50%;">
     <p>
-       Filter Last Names: <select asp-for="LastName" asp-items="Model.LastNames">
-            <option value="">All</option>
-        </select> <br /> <br />
         Search by First Name: <input type="text" asp-for="SearchFirstName" />
+        <br /> <br />
+        Search by Last Name: <input type="text" asp-for="SearchLastName" />
+        <br /> <br />
+        Search by Address: <input type="text" asp-for="SearchAddress" />
+        <br /> <br />
+        Search by Tel. Number: <input type="text" asp-for="SearchTelNum" />
         <br /> <br />
         <input type="submit" value="Filter" />
     </p>
