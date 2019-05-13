@@ -25,17 +25,19 @@ namespace AddressBook.Pages.Persons
         [BindProperty(SupportsGet = true)]
         public string SearchFirstName { get; set; }
 
-        public SelectList LastNames { get; set; }
         [BindProperty(SupportsGet = true)]
-        public string LastName { get; set; }
+        public string SearchLastName { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public string SearchAddress { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public string SearchTelNum { get; set; }
 
 
 
         public async Task OnGetAsync() 
         {
-            IQueryable<string> lastnameQuery = from p in _context.Person
-                                            orderby p.Last_Name
-                                            select p.Last_Name;
 
             var persons = from p in _context.Person
                          select p;
@@ -45,22 +47,22 @@ namespace AddressBook.Pages.Persons
                 persons = persons.Where(s => s.First_Name.Contains(SearchFirstName));
             }
 
-            if (!string.IsNullOrEmpty(LastName))
+            if (!string.IsNullOrEmpty(SearchLastName))
             {
-                persons = persons.Where(x => x.Last_Name == LastName);
+                persons = persons.Where(s => s.Last_Name.Contains(SearchLastName));
             }
 
-            LastNames = new SelectList(await lastnameQuery.Distinct().ToListAsync());
+            if (!string.IsNullOrEmpty(SearchAddress))
+            {
+                persons = persons.Where(s => s.Address.Contains(SearchAddress));
+            }
+
+            if (!string.IsNullOrEmpty(SearchTelNum))
+            {
+                persons = persons.Where(s => s.Telephone_Number.Contains(SearchTelNum));
+            }
+
             Person = await persons.ToListAsync();
         }
-
-       
-
-
-
-
-
-
-
     }
 }
