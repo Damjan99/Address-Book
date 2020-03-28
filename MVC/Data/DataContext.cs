@@ -4,12 +4,14 @@ using MVC.Models;
 
 namespace MVC.Data
 {
-    public class MVC_Context : DbContext
+    public class DataContext : DbContext
     {
-        public MVC_Context(DbContextOptions<MVC_Context> options)
+        public DataContext(DbContextOptions<DataContext> options)
             : base(options)
         {
         }
+
+        public DataContext() { }
 
         public DbSet<Person> Person { get; set; }
     }
