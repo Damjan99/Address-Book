@@ -1,11 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using MVC.Data;
-using MVC.Models;
 using System;
 using System.Linq;
 
-namespace MvcPerson.Models
+namespace MVC.Models
 {
     public static class SeedData
     {
