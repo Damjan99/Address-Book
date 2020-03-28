@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using MVC.Data;
 using MVC.Models;
 using System;
+using System.Linq;
 
 namespace MvcPerson.Models
 {
@@ -14,6 +15,9 @@ namespace MvcPerson.Models
                 serviceProvider.GetRequiredService
                 <DbContextOptions<DataContext>>()))
             {
+                if (context.Person.Any())
+                    return;
+
                 context.Person.AddRange(
 
                     new Person
