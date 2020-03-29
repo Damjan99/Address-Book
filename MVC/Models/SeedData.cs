@@ -22,6 +22,7 @@ namespace MVC.Models
                     new Person
                     {
                         Name = "Damjan",
+                        LastName = "Dimitrov",
                         Address = "Titov Trg 1",
                         PhoneNumber = "069 983 065"
                     },
@@ -29,6 +30,7 @@ namespace MVC.Models
                     new Person
                     {
                         Name = "Janez",
+                        LastName = "Novak",
                         Address = "Kraljeva Ulica 20",
                         PhoneNumber = "232 466 012"
                     },
@@ -36,6 +38,7 @@ namespace MVC.Models
                     new Person
                     {
                         Name = "Nikita",
+                        LastName = "Khatskevich",
                         Address = "Avstrovska Ulica 3",
                         PhoneNumber = "072 983 202"
                     },
@@ -43,6 +46,7 @@ namespace MVC.Models
                     new Person
                     {
                         Name = "Angela",
+                        LastName = "Ignovska",
                         Address = "Titov Trg 1",
                         PhoneNumber = "069 212 991"
                     },
@@ -50,6 +54,7 @@ namespace MVC.Models
                     new Person
                     {
                         Name = "Marko",
+                        LastName = "Vidmar",
                         Address = "Ljubljanska 14",
                         PhoneNumber = "051 243 318"
                     },
@@ -57,6 +62,7 @@ namespace MVC.Models
                     new Person
                     {
                         Name = "Martin",
+                        LastName = "Gajdov",
                         Address = "Wundergarten 152",
                         PhoneNumber = "910 123 654"
                     },
@@ -64,6 +70,7 @@ namespace MVC.Models
                     new Person
                     {
                         Name = "John",
+                        LastName = "Smith",
                         Address = "North Street 115",
                         PhoneNumber = "091 712 842"
                     },
@@ -71,6 +78,7 @@ namespace MVC.Models
                     new Person
                     {
                         Name = "Anita",
+                        LastName = "Kavsek",
                         Address = "Trubarjeva Ulica 19",
                         PhoneNumber = "091 712 842"
                     },
@@ -78,6 +86,7 @@ namespace MVC.Models
                     new Person
                     {
                         Name = "Gorjan",
+                        LastName = "Dimitrov",
                         Address = "Blagoj Nechev 46",
                         PhoneNumber = "070 342 007"
                     }
