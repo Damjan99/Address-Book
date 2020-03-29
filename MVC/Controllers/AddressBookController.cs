@@ -20,9 +20,21 @@ namespace MVC.Controllers
         }
 
         // GET: AddressBook
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string name, string address, string phone)
         {
-            return View(await _context.Person.ToListAsync());
+            var person = from m in _context.Person
+                         select m;
+
+            if (!String.IsNullOrEmpty(name))
+                person = person.Where(p => p.Name.Contains(name));
+
+            if (!String.IsNullOrEmpty(address))
+                person = person.Where(p => p.Address.Contains(address));
+
+            if (!String.IsNullOrEmpty(phone))
+                person = person.Where(p => p.PhoneNumber.Contains(phone));
+
+            return View(await person.ToListAsync());
         }
 
         // GET: AddressBook/Details/5
