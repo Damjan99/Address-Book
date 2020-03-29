@@ -20,13 +20,16 @@ namespace MVC.Controllers
         }
 
         // GET: AddressBook
-        public async Task<IActionResult> Index(string name, string address, string phone)
+        public async Task<IActionResult> Index(string name, string lastName, string address, string phone)
         {
             var person = from m in _context.Person
                          select m;
 
             if (!String.IsNullOrEmpty(name))
                 person = person.Where(p => p.Name.Contains(name));
+
+            if (!String.IsNullOrEmpty(lastName))
+                person = person.Where(p => p.Name.Contains(lastName));
 
             if (!String.IsNullOrEmpty(address))
                 person = person.Where(p => p.Address.Contains(address));
