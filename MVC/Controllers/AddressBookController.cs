@@ -28,7 +28,7 @@ namespace MVC.Controllers
                 person = person.Where(p => p.Name.Contains(name));
 
             if (!String.IsNullOrEmpty(lastName))
-                person = person.Where(p => p.Name.Contains(lastName));
+                person = person.Where(p => p.LastName.Contains(lastName));
 
             if (!String.IsNullOrEmpty(address))
                 person = person.Where(p => p.Address.Contains(address));
