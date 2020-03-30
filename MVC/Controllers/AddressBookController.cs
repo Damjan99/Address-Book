@@ -1,10 +1,8 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVC.Data;
 using MVC.Models;
@@ -21,7 +19,6 @@ namespace MVC.Controllers
             _context = context;
         }
 
-        // GET: AddressBook
         public async Task<IActionResult> Index(string name, string lastName, string address, string phone)
         {
             var person = from m in _context.Person
@@ -42,7 +39,6 @@ namespace MVC.Controllers
             return View(await person.ToListAsync());
         }
 
-        // GET: AddressBook/Details/5
         [Authorize(Roles = "Admin,User")]
         public async Task<IActionResult> Details(int? id)
         {
@@ -61,16 +57,12 @@ namespace MVC.Controllers
             return View(person);
         }
 
-        // GET: AddressBook/Create
         [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: AddressBook/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,LastName,Address,PhoneNumber")] Person person)
@@ -84,7 +76,6 @@ namespace MVC.Controllers
             return View(person);
         }
 
-        // GET: AddressBook/Edit/5
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
@@ -101,9 +92,6 @@ namespace MVC.Controllers
             return View(person);
         }
 
-        // POST: AddressBook/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
@@ -137,7 +125,6 @@ namespace MVC.Controllers
             return View(person);
         }
 
-        // GET: AddressBook/Delete/5
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
@@ -156,7 +143,6 @@ namespace MVC.Controllers
             return View(person);
         }
 
-        // POST: AddressBook/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
@@ -187,8 +173,6 @@ namespace MVC.Controllers
     : Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%");
 
             var json = JsonConvert.SerializeObject(_context.Person, Formatting.Indented);
-            //Response.Write("<script>alert('Data inserted successfully')</script>");
-            //Response.
             System.IO.File.WriteAllText(homePath + "/data.json", json);
         }
 
