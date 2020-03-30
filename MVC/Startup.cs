@@ -30,13 +30,13 @@ namespace MVC
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<DataContext>();
+                .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
 
             services.AddDbContext<DataContext>(options =>
             {
-                var connectionString = Configuration.GetConnectionString("DataContext");
+                var connectionString = Configuration.GetConnectionString("DataConnection");
 
                 if (Environment.IsDevelopment())
                 {
@@ -47,6 +47,10 @@ namespace MVC
                     options.UseSqlServer(connectionString);
                 }
             });
+
+            services.AddDbContext<ApplicationDbContext>(options =>
+               options.UseSqlite(
+                   Configuration.GetConnectionString("UsersConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
