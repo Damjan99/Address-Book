@@ -1,4 +1,4 @@
-@model IEnumerable<MVC.Models.Person>
+﻿@model IEnumerable<MVC.Models.Person>
 
 @{
     ViewData["Title"] = "Index";
@@ -36,7 +36,7 @@
                         <button><a asp-area="" style="text-decoration:none; color:black;" asp-controller="AddressBook" asp-action="Index">Clear Filters</a></button>
                     </div>
                     <div class="float-right">
-                        <a asp-area="" asp-controller="AddressBook" asp-action="JSON" onclick="return alert('Please check your home directory for the file');">Export to JSON</a>
+                        <a asp-area="" asp-controller="AddressBook" asp-action="JSON">Export to JSON</a>
                     </div>
                 </div>
             </div>
@@ -64,25 +64,25 @@
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhoneNumber)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">View</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">View</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>

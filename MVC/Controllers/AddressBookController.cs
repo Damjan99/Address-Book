@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVC.Data;
 using MVC.Models;
+using Newtonsoft.Json;
 
 namespace MVC.Controllers
 {
@@ -158,6 +159,30 @@ namespace MVC.Controllers
             _context.Person.Remove(person);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+
+
+        public async Task<IActionResult> JSON()
+        {
+            ExportDataToJson();
+
+            var person = from m in _context.Person select m;
+            return View(await person.ToListAsync());
+        }
+
+        public void ExportDataToJson()
+        {
+            // Different OS have different paths to home directory
+            string homePath = (
+                Environment.OSVersion.Platform == PlatformID.Unix ||
+                Environment.OSVersion.Platform == PlatformID.MacOSX)
+    ? Environment.GetEnvironmentVariable("HOME")
+    : Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%");
+
+            var json = JsonConvert.SerializeObject(_context.Person, Formatting.Indented);
+            //Response.Write("<script>alert('Data inserted successfully')</script>");
+            //Response.
+            System.IO.File.WriteAllText(homePath + "/data.json", json);
         }
 
         private bool PersonExists(int id)
