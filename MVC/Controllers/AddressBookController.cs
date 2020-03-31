@@ -21,8 +21,7 @@ namespace MVC.Controllers
 
         public async Task<IActionResult> Index(string name, string lastName, string address, string phone)
         {
-            var person = from m in _context.Person
-                         select m;
+            var person = from p in _context.Person select p;
 
             if (!String.IsNullOrEmpty(name))
                 person = person.Where(p => p.Name.Contains(name));
@@ -43,16 +42,13 @@ namespace MVC.Controllers
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
-            {
                 return NotFound();
-            }
 
             var person = await _context.Person
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(p => p.Id == id);
+
             if (person == null)
-            {
                 return NotFound();
-            }
 
             return View(person);
         }
@@ -73,6 +69,7 @@ namespace MVC.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             return View(person);
         }
 
@@ -80,15 +77,13 @@ namespace MVC.Controllers
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
-            {
                 return NotFound();
-            }
 
             var person = await _context.Person.FindAsync(id);
+
             if (person == null)
-            {
                 return NotFound();
-            }
+
             return View(person);
         }
 
@@ -98,9 +93,7 @@ namespace MVC.Controllers
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,LastName,Address,PhoneNumber")] Person person)
         {
             if (id != person.Id)
-            {
                 return NotFound();
-            }
 
             if (ModelState.IsValid)
             {
@@ -111,14 +104,11 @@ namespace MVC.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PersonExists(person.Id))
-                    {
+                    if (!_context.Person.Any(p => p.Id == person.Id))
                         return NotFound();
-                    }
+
                     else
-                    {
                         throw;
-                    }
                 }
                 return RedirectToAction(nameof(Index));
             }
@@ -129,16 +119,13 @@ namespace MVC.Controllers
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
-            {
                 return NotFound();
-            }
 
             var person = await _context.Person
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(p => p.Id == id);
+
             if (person == null)
-            {
                 return NotFound();
-            }
 
             return View(person);
         }
@@ -154,16 +141,7 @@ namespace MVC.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        [Authorize(Roles = "Admin,User")]
         public async Task<IActionResult> JSON()
-        {
-            ExportDataToJson();
-
-            var person = from m in _context.Person select m;
-            return View(await person.ToListAsync());
-        }
-
-        public void ExportDataToJson()
         {
             // Different OS have different paths to home directory
             string homePath = (
@@ -174,11 +152,8 @@ namespace MVC.Controllers
 
             var json = JsonConvert.SerializeObject(_context.Person, Formatting.Indented);
             System.IO.File.WriteAllText(homePath + "/data.json", json);
-        }
 
-        private bool PersonExists(int id)
-        {
-            return _context.Person.Any(e => e.Id == id);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
