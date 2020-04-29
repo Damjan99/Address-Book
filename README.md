@@ -9,8 +9,6 @@ The MVC pattern is used in this project, where the model, the view and the contr
 * Identity API
 * Visual Studio 2019
 * .NET Core 3.0
-* Git + GitLab
-
 
 **Functionality:**
 * Two static pages, Home and Privacy and the data view Address Book
